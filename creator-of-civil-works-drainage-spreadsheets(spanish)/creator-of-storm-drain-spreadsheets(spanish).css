@@ -1,0 +1,81 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFF8E1; 
+    color: #5D4037;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  
+  #container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFE0B2; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #FFB74D; 
+    border-radius: 8px;
+  }
+  
+  #titulo {
+    color: #3E2723; 
+    margin: 5px 0;
+  }
+  
+  fieldset {
+    border: 2px solid #D7CCC8; 
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #FFECB3; 
+  }
+  
+  legend {
+    font-weight: bold;
+    color: #E65100;
+    padding: 0 10px;
+  }
+  
+  
+  label {
+    display: block; 
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #5D4037; 
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    display: block; 
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #BCAAA4; 
+    border-radius: 4px;
+    background-color: #FFF8E1; 
+  }
+  
+  h5 {
+    color: #BF360C; 
+    margin-top: 0;
+    border-bottom: 1px solid #D7CCC8; 
+    padding-bottom: 5px;
+  }
+  
+  
+  .answerText {
+    display: block; 
+    margin: 10px 0;
+    padding: 8px;
+    background-color: #FFCC80; 
+    border-left: 4px solid #E65100; 
+    font-size: 1em;
+    color: #3E2723; }
