@@ -25,11 +25,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const areatubo=document.getElementById("areatubo");
   const n=0.01;
   const caudaltubolleno=document.getElementById("caudaltubolleno");
+  const velocidadtubolleno=document.getElementById("velocidadtubolleno");
   const coeficienteq = document.getElementById("coeficienteq");
   const coeficientev = document.getElementById("coeficientev");
   const coeficiented = document.getElementById("coeficiented");
   const coeficienter = document.getElementById("coeficienter");
   const gamma = document.getElementById("gamma");
+  const velocidadzanja = document.getElementById("velocidadzanja");
+  const diametrozanja = document.getElementById("diametrozanja");
+  const radiozanja = document.getElementById("radiozanja");
+  const fuerzaa = document.getElementById("fuerzaa");
+  const volumen = document.getElementById("volumen");
+  const volumena = document.getElementById("volumena");
+  const volumenr = document.getElementById("volumenr");
 
   function calcularLongitud() {
       lacumulada.textContent = (parseFloat(lpropia.value) || 0) + parseFloat(ltributaria.value) || 0;     
@@ -141,6 +149,17 @@ document.addEventListener('DOMContentLoaded', function() {
   cotas1.addEventListener("input", calcularcaudalt);
   cotas2.addEventListener("input", calcularcaudalt);
   calcularcaudalt();
+  
+  function calcularvelocidadtubo(){
+    const q=caudaltubolleno.textContent;
+    const a=areatubo.textContent*1000;
+    velocidadtubolleno.textContent=(q/a).toFixed(2);
+  }
+   diametro.addEventListener("input", calcularvelocidadtubo);
+  cotas1.addEventListener("input", calcularvelocidadtubo);
+  cotas2.addEventListener("input", calcularvelocidadtubo);
+  calcularvelocidadtubo();
+  
   
      function calcularcoeficienteq(){
        const q=caudaldiseño.textContent;
@@ -273,6 +292,69 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 gamma.addEventListener("input", calcularvdr);
 calcularvdr(); 
+  
+  
+   
+  function calcularzanjas(){
+    const q=coeficientev.textContent;
+    const a=velocidadtubolleno.textContent;
+    velocidadzanja.textContent=(a*q).toFixed(3);
+  }
+   gamma.addEventListener("input", calcularzanjas);
+  calcularzanjas();
+  
+  function calculardiametroz(){
+    const c=coeficiented.textContent;
+    const d=diametro.value;
+    diametrozanja.textContent=(c*d).toFixed(3);
+  }
+   gamma.addEventListener("input", calculardiametroz);
+  calculardiametroz();
+  
+  function calcularradioz(){
+    const a=coeficienter.textContent;
+    const b=radio.textContent;
+    radiozanja.textContent =(a*b).toFixed(3);
+  }
+  gamma.addEventListener("input", calcularradioz);
+  calcularradioz();
+  
+  function calcularfuerzaa(){
+    const n = pendiente.textContent/100;
+    const r = radiozanja.textContent;
+    fuerzaa.textContent=(1000*n*r).toFixed(3);
+  }
+  gamma.addEventListener("input", calcularfuerzaa);
+  calcularfuerzaa();
+  
+    function calcularv(){
+    const hprom=hpromedio.textContent;
+    const l=lpropia.value;
+    volumen.textContent=(0.95*l*hprom).toFixed(3);
+  }
+    gamma.addEventListener("input", calcularv);
+    gamma.addEventListener("input", calcularv);
+    calcularv();
+  
+  function calcularvolumena(){
+    const a=lpropia.value;
+    volumena.textContent= 0.95*0.1*a;
+  }
+    gamma.addEventListener("input",calcularvolumena)
+    calcularvolumena();
+  
+  
+  function calcularvolumenr(){
+    const a=areatubo.textContent;
+    const v=volumen.textContent;
+    const va=volumena.textContent;
+    const l=lpropia.value;
+    const res=areatubo.textContent*lpropia.value;
+    volumenr.textContent=v-va-(res);
+  }  
+  
+  gamma.addEventListener("input",calcularvolumenr);
+    calcularvolumenr();
   
   
 });
