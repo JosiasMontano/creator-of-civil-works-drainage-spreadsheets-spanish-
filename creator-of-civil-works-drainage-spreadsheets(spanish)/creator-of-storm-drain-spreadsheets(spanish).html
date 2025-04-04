@@ -1,18 +1,20 @@
-<DOCTYPE html>
-  <html lang="en">
+<!DOCTYPE html>
+  <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device, initial-scale=1.0">
-    <link reel="stylesheet" href="styles.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="creator-of-storm-drain-spreadsheets(spanish).css"/>
     <title>atajados</title>
+  </head>  
     <body>
       
         <div id="header">
           <h3 id="titulo">App para planillas pluviales de alcantarillado</h3>
-          <h6 id="titulo">Rellena los datos y obten los resultados</h6>
+          <h6 id="subtitulo">Rellena los datos y obten los resultados</h6>
         </div>
         <div id="container">
           <fieldset id="firstdates">
+            <legend>firstdates</legend>
              <label for="fila">Fila:</label>
              <input type="number" id="fila" name="fila" placeholder="ingrese la fila" >
              <label for="calle">Calle:</label>
@@ -24,6 +26,7 @@
            </fieldset>
           
           <fieldset id="longitudes">
+            <legend>longitudes</legend>
             <h5>LONGITUDES (m)</h5>
             <label for="lpropia">L. Propia: </label>
             <input type="number" id="lpropia" name="lpropia" placeholder="Ingrese el valor">
@@ -33,6 +36,7 @@
           </fieldset>
               
             <fieldset id="areas">
+               <legend>areas</legend> 
                <h5>AREAS (Ha)</h5>
                <label for="apropia">A. Propia: </label>
                <input type="number" id="apropia" name="apropia" placeholder="Ingrese el valor">          
@@ -41,18 +45,21 @@
                <span class="answerText">A. Acumulada:  <strong><span id="aacumulada">0</span></strong></span>
           </fieldset>
           
-          <fieldset id="anuncio">
-              <text>Asumimos el coeficiente de ecorrentia: <strong>C=0.3</strong></text>
+          <fieldset class="anuncio">
+            <legend>ecorrentia</legend>
+              <span>Asumimos el coeficiente de ecorrentia: <strong>C=0.3</strong></span>
           </fieldset>
-          <fieldset id="anuncio">
-              <text>El Coeficiente de manning: <strong>n=0.01</strong></text>
+          <fieldset class="anuncio">
+            <legend>manning</legend>
+              <span>El Coeficiente de manning: <strong>n=0.01</strong></span>
           </fieldset>
           
           <fieldset id="tiempos">
+            <legend>TIEMPOS</legend>
             <h5>TIEMPOS (s)</h5> 
             
             
-            <label for="velocidad">Velocidad(m/s): </label>
+            <label for="velocidad">Velocidad (m/s): </label>
             <input type="number" id="velocidad" name="velocidad" placeholder="Ingrese el valor">   
             <label for="tentrada">T. Entrada(min): </label>
             <input type="number" id="tentrada" name="tentrada" placeholder="Ingrese el valor">
@@ -60,19 +67,23 @@
             <span class="answerText">T. Concentracion(min): <strong><span id="tconcentracion">0</span></strong></span>
           </fieldset>  
           
-          <fieldset id="anuncio">
+          <fieldset class="anuncio">
+            <legend>Intensidad</legend>
             <span class="answerText"><strong>La Intensidad(mm/hr) es: I=<span id="intensidad">0</span></strong></span>
           </fieldset>
-          <fieldset id="anuncio">
+          <fieldset class="anuncio">
+            <legend>Caudal</legend>
             <span class="answerText"><strong>El Caudal de diseño es: Qd(l/s)= <span id="caudaldiseño">0</span></strong></span>
           </fieldset>
           
-          <fieldset id="diametros">       
+          <fieldset class="diametros">       
+            <legend>Diametro</legend>
             <label for="diametro">Diametro(mm): </label>
             <input type="number" id="diametro" name="diametro" placeholder="Ingrese el diametro(mm)">
           </fieldset>
       
           <fieldset>
+            <legend>COTAS</legend>
              <h5>COTAS DEL TERRENO</h5>
              <label for="cotat1">Cota 1 del terreno(Ct1): </label>
              <input type="number" id="cotat1" name="cotat1" placeholder="Ingrese Ct1">
@@ -84,68 +95,86 @@
              <input type="number" id="cotas2" name="cotas2" placeholder="Ingrese Cs2">
            </fieldset> 
       </div>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>H1</legend>
             <span class="answerText"><strong>La altura superior H1= <span id="alturah1">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>H2</legend>
             <span class="answerText"><strong>La altura inferior H2= <span id="alturah2">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>Hp</legend>
             <span class="answerText"><strong>La altura promedio Hp(m)= <span id="hpromedio">0</span></strong></span>
       </fieldset>
-          <fieldset id="anuncio">
+          <fieldset class="anuncio">
+            <legend>pendiente</legend>
             <span class="answerText"><strong>La pendiente S(%)= <span id="pendiente">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>Radio</legend>
             <span class="answerText"><strong>El Radio R(m) es= <span id="radio">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>area-tubo</legend>
             <span class="answerText"><strong>El area del tubo A'(m^2) es= <span id="areatubo">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>caudal-tubo</legend>
             <span class="answerText"><strong>El Caudal a tubo lleno es Q(l/s)= <span id="caudaltubolleno">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>velocidad-tubo</legend>
             <span class="answerText"><strong>La velocidad a tubo lleno es V(m/s)= <span id="velocidadtubolleno">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>caudal-diseño</legend>
             <span class="answerText"><strong>Relacion Caudal diseño y tubo lleno q/Q= <span id="coeficienteq">0</span></strong></span>
       </fieldset>
       <fieldset id="gamma">       
-            <label for="gamma">Coeficiente gamma γ (Se recomienda usar 1000): </label>
+            <legend>gamma</legend>
+            <label for="gamma">Coeficiente gamma y (Se recomienda usar 1000): </label>
             <input type="number" id="gamma" name="gamma" placeholder="Ingrese el valor">
           </fieldset>
-       <fieldset id="anuncio">
+       <fieldset class="anuncio">
+            <legend>V/v</legend>
             <span class="answerText"><strong>Relacion velocidad caudal y tubo lleno V/v'= <span id="coeficientev">0</span></strong></span>
       </fieldset>
-       <fieldset id="anuncio">
+       <fieldset class="anuncio">
+            <legend>d/D</legend>
             <span class="answerText"><strong>Relacion diametro caudal y tubo lleno d/D= <span id="coeficiented">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>rh/RH</legend>
             <span class="answerText"><strong>Relacion readios caudal y tubo lleno rh/RH= <span id="coeficienter">0</span></strong></span>
       </fieldset>
       
         <fieldset id="tiempos">
+            <legend>ZANJA</legend>
             <h5>ANCHO DE ZANJA: </h5> 
              
            <span class="answerText"><strong>Velocidad de zanja Vz(m/s)= <span id="velocidadzanja">0</span></strong></span>
            <span class="answerText"><strong>Diametro de zanja Dz(mm)= <span id="diametrozanja">0</span></strong></span>
            <span class="answerText"><strong>Radio de zanja Rz(m)= <span id="radiozanja">0</span></strong></span>     
           </fieldset>  
-        <fieldset id="anuncio">
+        <fieldset class="anuncio">
+            <legend>t</legend>
             <span class="answerText"><strong>Fuerza atractiva T(kg/m2)= <span id="fuerzaa">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>ve</legend>
             <span class="answerText"><strong>Volumen de excavacion Ve(m3)= <span id="volumen">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>vc</legend>
             <span class="answerText"><strong>Volumen de arena Vc(m3)= <span id="volumena">0</span></strong></span>
       </fieldset>
-      <fieldset id="anuncio">
+      <fieldset class="anuncio">
+            <legend>vr</legend>
             <span class="answerText"><strong>Volumen de relleno Vr(m3)= <span id="volumenr">0</span></strong></span> 
       </fieldset>
-  
+      <script src="./creator-of-storm-drain-spreadsheets(spanish).js"></script>
     </body>
-    <sript scr="./script.js"></script>
-  </head>
+    
+
   </html>
